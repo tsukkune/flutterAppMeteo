@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app_meteo/services/authentication.dart';
 import 'package:firebase_database/firebase_database.dart';
-import 'dart:async';
+
 
 class HomePage extends StatefulWidget {
   HomePage({Key key, this.auth, this.userId, this.onSignedOut})
@@ -25,9 +25,7 @@ class _HomePageState extends State<HomePage> {
   @override
   void initState() {
     super.initState();
-
     _checkEmailVerification();
-
   }
 
   void _checkEmailVerification() async {
@@ -37,7 +35,7 @@ class _HomePageState extends State<HomePage> {
     }
   }
 
-  void _resentVerifyEmail(){
+  void _resentVerifyEmail() {
     widget.auth.sendEmailVerification();
     _showVerifyEmailSentDialog();
   }
@@ -77,7 +75,8 @@ class _HomePageState extends State<HomePage> {
         // return object of type Dialog
         return AlertDialog(
           title: new Text("Verify your account"),
-          content: new Text("Link to verify account has been sent to your email"),
+          content: new Text(
+              "Link to verify account has been sent to your email"),
           actions: <Widget>[
             new FlatButton(
               child: new Text("Dismiss"),
@@ -100,9 +99,11 @@ class _HomePageState extends State<HomePage> {
     }
   }
 
-  @override
-  Widget build(BuildContext context) {
-    return new Scaffold(
+
+
+    @override
+    Widget build(BuildContext context) {
+      return new Scaffold(
         appBar: new AppBar(
           title: new Text('Flutter App Meteo'),
           actions: <Widget>[
@@ -112,6 +113,7 @@ class _HomePageState extends State<HomePage> {
                 onPressed: _signOut)
           ],
         ),
-    );
+      );
+    }
   }
-}
+
