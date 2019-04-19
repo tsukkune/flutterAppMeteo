@@ -43,6 +43,8 @@ flutter:
   assets:
 
     - assets/Eolienne2.flr
+    - assets/Humidite.flr
+    - assets/ephemeride.flr
     - assets/flutter-icon.png
   #  - images/a_dot_ham.jpeg
 
