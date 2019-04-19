@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "166099984974",
+    "firebase_url": "https://flutter-app-meteo.firebaseio.com",
+    "project_id": "flutter-app-meteo",
+    "storage_bucket": "flutter-app-meteo.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:166099984974:android:31bc9b83fa90c67e",
+        "android_client_info": {
+          "package_name": "com.nicolas.flutterappmeteo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "166099984974-aibqtlscancffetnjplllfv21dns8009.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC7wOjHv8HaBzTO5USZX32tVoV6yEZGNYA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "166099984974-aibqtlscancffetnjplllfv21dns8009.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
