@@ -122,7 +122,7 @@ class _HomePageState extends State<HomePage> {
                   child: FlareActor("assets/Eolienne2.flr",
                     alignment: Alignment.center,
                     fit:BoxFit.contain,
-                    animation:"elolienne2" ,
+                    animation:"eolienne2" ,
                     isPaused: false,
                   ),
                 )
