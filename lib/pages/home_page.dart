@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app_meteo/services/authentication.dart';
 import 'package:firebase_database/firebase_database.dart';
+import 'package:flare_flutter/flare_actor.dart';
 
 
 class HomePage extends StatefulWidget {
@@ -112,6 +113,22 @@ class _HomePageState extends State<HomePage> {
                     style: new TextStyle(fontSize: 17.0, color: Colors.white)),
                 onPressed: _signOut)
           ],
+        ),
+        body: Container(padding: EdgeInsets.all(32.0),
+          child: Center(
+            child: Column(
+              children: <Widget>[
+                Expanded(
+                  child: FlareActor("assets/Eolienne2.flr",
+                    alignment: Alignment.center,
+                    fit:BoxFit.contain,
+                    animation:"elolienne2" ,
+                    isPaused: false,
+                  ),
+                )
+              ],
+            ),
+          ),
         ),
       );
     }
