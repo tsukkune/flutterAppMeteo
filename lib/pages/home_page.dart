@@ -119,10 +119,10 @@ class _HomePageState extends State<HomePage> {
             child: Column(
               children: <Widget>[
                 Expanded(
-                  child: FlareActor("assets/Humidite.flr",
+                  child: FlareActor("assets/goutte.flr",
                     alignment: Alignment.center,
                     fit:BoxFit.contain,
-                    animation:"humidite",
+                    animation:"Goutte",
                     isPaused: false,
                   ),
                 )

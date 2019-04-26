@@ -46,6 +46,7 @@ flutter:
     - assets/Humidite.flr
     - assets/ephemeride.flr
     - assets/flutter-icon.png
+    - assets/goutte.flr
   #  - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
