@@ -1,14 +1,14 @@
 import 'dart:convert';
-
+import 'package:flare_dart/math/mat2d.dart';
+import 'package:flare_flutter/flare.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app_meteo/services/authentication.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flare_flutter/flare_actor.dart';
-
-
 import 'dart:async';
 import 'package:http/http.dart' as http;
 import 'package:flutter_app_meteo/models/weather.dart';
+import 'package:flare_flutter/flare_controller.dart';
 
 
 class HomePage extends StatefulWidget {
@@ -23,14 +23,19 @@ class HomePage extends StatefulWidget {
   State<StatefulWidget> createState() => new _HomePageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _HomePageState extends State<HomePage> implements FlareController {
 
   final FirebaseDatabase _database = FirebaseDatabase.instance;
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
 
+
+  FlareAnimationLayer _eolienneAnim;
+  FlutterActorArtboard _artboard;
+
   bool _isEmailVerified = false;
   String weatherUrl = 'https://api.apixu.com/v1/forecast.json?key=6fc55b4061b1483db2e80607191104&q=Bordeaux&days=7&lang=fr';
   Weather currentWeather;
+
 
   @override
   void initState() {
@@ -177,7 +182,7 @@ class _HomePageState extends State<HomePage> {
                     alignment: Alignment.center,
                     fit:BoxFit.contain,
                     animation:"eolienne2",
-                    isPaused: false,
+
                   ),
                 )
               ],
@@ -186,5 +191,32 @@ class _HomePageState extends State<HomePage> {
         ),
       );
     }
+
+  @override
+  ValueNotifier<bool> isActive;
+
+  @override
+  bool advance(FlutterActorArtboard artboard, double elapsed) {
+    // TODO: implement advance
+    _eolienneAnim.time = 200;
+    _eolienneAnim.apply(artboard);
+    return true;
+  }
+
+  @override
+  void initialize(FlutterActorArtboard artboard) {
+    // TODO: implement initialize
+    _artboard = artboard;
+    _eolienneAnim = FlareAnimationLayer()
+      ..animation = _artboard.getAnimation('eolienne2');
+
+  }
+
+  @override
+  void setViewTransform(Mat2D viewTransform) {
+    // TODO: implement setViewTransform
+  }
+
+
   }
 
