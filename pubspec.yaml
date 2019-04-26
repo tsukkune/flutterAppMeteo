@@ -22,6 +22,9 @@ dependencies:
   firebase_auth: ^0.8.4+2
   firebase_database: ^2.0.3
   flare_flutter: ^1.0.7
+  location: ^2.3.5
+  http: ^0.12.0+2
+  equatable: 0.1.10
 
 dev_dependencies:
   flutter_test:
